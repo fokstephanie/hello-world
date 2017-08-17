@@ -1,0 +1,236 @@
+<html>
+	<head>
+
+		<script scr="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<script scr="https://threejs.org/examples/js/libs/stats.min.js"></script>
+		<style>
+			
+			body {
+				overflow-x: hidden;
+			}
+			/* ---- particles.js container ---- */
+
+			#particles-js {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: white;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: 50% 50%;
+				z-index: -100;
+			}
+
+			#join_us {
+				border: 4px #FF8800 double;
+				padding: 40px 120px 40px 120px;
+				width: 400px;
+				display: block;
+				margin: 0 auto;
+				background-color: white;
+			}
+			input:not([type=radio]) {
+				width: 250px;
+				height: 50px;
+				padding: 0px 10px 0px 15px;
+			}
+
+			#container {
+			    max-width: 1000px;
+			    margin-right: auto; 
+			    margin-left: auto;
+			}
+
+			a, p {
+			    color: #333;
+			    font-family: 'Mada', sans-serif;
+			    font-weight: 200;
+			}
+
+			ul#navbar {
+			    list-style-type: none;
+			    margin: 0;
+			    padding: 0;
+			    overflow: hidden;
+			    width: auto;
+			}
+
+			li.nav-item {
+			    float: right;
+			    padding-top: 15px;
+			    padding-bottom: 15px;
+			}
+
+			li.nav-item a {
+			    display: inline;
+			    text-align: center;
+			    padding: 14px 16px;
+			    text-decoration: none;
+			    font-size: 14pt;
+			}
+
+			li#logo-nav-item {
+			    float: left;
+			    padding-top: 10px;
+			    padding-bottom: 10px;
+			}
+
+			li#logo-nav-item a {
+			    font-size: 28pt;
+			    display: inline;
+			    color: #333;
+			    text-align: center;
+			    padding: 14px 16px;
+			    text-decoration: none;
+			}
+
+			div#splash {
+			    padding-left: 20px;
+			    padding-right: 20px;
+			}
+
+			div#splash-name {
+			    width: 500px;
+			}
+
+			div#splash-name h1 {
+			    font-family: 'Mada', sans-serif;
+			    /*font-family: 'Noticia Text', serif;*/
+			    font-size: 36pt;
+			    font-weight: 200;
+			    color: #333;
+			}
+
+			div#splash-name h2 {
+			    font-size: 36pt;
+			    font-family: "Arial";
+			    font-weight: lighter;
+			    color: #333;    
+			    margin-bottom:0px;
+			}
+
+			div#splash-demo {
+			    margin-left:auto;
+			    margin-right:auto;
+			    width: 400px;
+			    height: 500px;
+			    margin-top: 50px;  
+			}
+
+			div#splash-demo img {
+			    width: 400px;
+			    height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="particles-js"></div>
+		<div id="join_us">
+				<form action="https://formspree.io/uwaterloo.cgda@gmail.com" method="POST">
+				    <p>Full Name</p>
+				    <input type="text" name="name" placeholder="Your name" autofocus><br><br>
+
+				    <p>Email Address</p>
+				    <input type="email" name="email" placeholder="Your email"><br><br>
+
+				    <p>Student Number</p>
+				    <input type="text" name="student_num" maxlength="8" placeholder="Your student number"><br><br>
+
+				    <p>Student ID</p>
+				    <input type="text" name="student_id" placeholder="Your student ID"><br><br>
+
+				    <p>What is your program and academic level?</p>
+				    <input type="text" name="email" placeholder="ex. 2A Computer Science"><br><br>
+
+				    <p>Would you be interested in being a mentor?</p>
+				    <p>
+				    	<input type="radio" name="mentor_yes_no" id="mentor_yes" value="yes">
+				    	<label for="mentor_yes">Yes</label> 
+				    </p>
+				    <p>
+				    	<input type="radio" name="mentor_yes_no" id="mentor_no" value="no">
+				    	<label for="mentor_no">No</label> 
+				    </p><br>
+
+				    <input type="text" name="_gotcha" style="display:none" />
+				    <p>Share your resume with us (optional)</p>
+				    <input type="file" name="resume"> <br><br><br>
+
+				    <button type="submit">Send</button>
+				</form>
+		</div>
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  		<script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+		<script>
+		/* ---- particles.js config ---- */
+
+			particlesJS("particles-js", {
+			  "particles": {
+			    "number": {
+			      "value": 250,
+			      "density": {
+			        "enable": true,
+			        "value_area": 800
+			      }
+			    },
+			    "color": { 
+			      "value": "#FF8800"
+			    },
+			    "opacity": {
+			      "value": 1,
+			      "random": false,
+			      "anim": {
+			        "enable": false,
+			        "speed": 1,
+			        "opacity_min": 0.01,
+			        "sync": true
+			      }
+			    },
+			    "size": {
+			      "value": 1,
+			      "random": true,
+			      "anim": {
+			        "enable": false,
+			        "speed": 40,
+			        "size_min": 0.1,
+			        "sync": false
+			      }
+			    },
+			    "line_linked": {
+			      "enable": true,
+			      "distance": 100,
+			      "color": "#fccab5",
+			      "opacity": 50,
+			      "width": 1
+			    },
+			    "move": {
+			      "enable": true,
+			      "speed": 0.3,
+			      "direction": "none",
+			      "random": false,
+			      "straight": false,
+			      "out_mode": "out",
+			      "bounce": false,
+			    }
+			  },
+			  "interactivity": {
+			    "detect_on": "canvas",
+			    "events": {
+			      "onhover": {
+			        "enable": false,
+			        "mode": "grab"
+			      },
+			      "onclick": {
+			        "enable": false,
+			        "mode": "push"
+			      },
+			      "resize": true
+			    }
+			  },
+			  "retina_detect": true
+			});
+
+			requestAnimationFrame(update);
+		</script>
+	</body>
+</html>
